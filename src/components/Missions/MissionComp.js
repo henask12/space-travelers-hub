@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { fetchMissions } from "../../redux/missions/missionsSlice";
 
 const MissionsList = () => {
     debugger;
@@ -19,8 +20,8 @@ const MissionsList = () => {
             <ul>
                 {missions?.map((mission) => (
                     <li key={mission.id}>
-                        <h2>{mission.country}</h2>
-                        <p>{mission.type}</p>
+                        <h2>{mission.name}</h2>
+                        <p>{mission.description}</p>
                     </li>
                 ))}
             </ul>

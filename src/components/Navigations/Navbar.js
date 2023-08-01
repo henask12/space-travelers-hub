@@ -11,6 +11,9 @@ const NavBar = () => {
                 <Link exact to="/rockets" activeClassName="underline" className="text-white mr-4 hover:text-gray-300">
                     Rockets
                 </Link>
+                <Link exact to="/missions" activeClassName="underline" className="text-white mr-4 hover:text-gray-300">
+                    Missions
+                </Link>
             </div>
         </nav>
     );
