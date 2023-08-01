@@ -3,14 +3,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchRockets } from "../../redux/rockets/rocketsSlice";
 
 const RocketsList = () => {
-    debugger;
     const dispatch = useDispatch();
     const rockets = useSelector((state) => state.rockets.rockets);
 
-    console.log(rockets);
-
     useEffect(() => {
-        debugger;
         dispatch(fetchRockets());
     }, [dispatch]);
 
