@@ -1,14 +1,13 @@
 // src/App.js
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-// import NavBar from "./Navbar";
 import RocketsList from "../Rockets";
 
 const Navigation = () => {
     return (
         <Router>
-            <nav className="bg-gray-800 p-4">
-                <div className="container mx-auto">
+            <nav className="bg-white-800 py-4 border border-white-100 rounded-lg shadow-sm">
+                <div className="container mx-auto px-4 sm:px-8 md:px-16 lg:px-20 xl:px-24 2xl:px-32 flex flex-col sm:flex-row justify-between items-center">
                     <Link exact to="/" className="text-white mr-4 hover:text-gray-300">
                         My Profile
                     </Link>
