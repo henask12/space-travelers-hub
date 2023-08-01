@@ -10,7 +10,6 @@ const MissionsList = () => {
     console.log(missions);
 
     useEffect(() => {
-        debugger;
         dispatch(fetchMissions());
     }, [dispatch]);
 

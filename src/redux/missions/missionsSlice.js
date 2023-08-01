@@ -13,7 +13,6 @@ const initialState = {
 };
 
 export const fetchMissions = createAsyncThunk("missions/fetchMissions", async () => {
-    debugger;
     try {
         const response = await axios.get(BASE_URL);
         return response.data;
