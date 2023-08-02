@@ -41,7 +41,12 @@ const RocketsList = () => {
                     Type:
                     {rocket.engines.type}
                   </p>
-                  <p className="text-sm mt-2 text-gray-600">{rocket.description}</p>
+                  <p className="text-sm mt-2 text-gray-600">
+                    {rocket.reserved ? (
+                      <span className="bg-green-500 text-white px-2 py-1 rounded-full mr-2">Reserved</span>
+                    ) : null}
+                    {rocket.description}
+                  </p>
                   {rocket.reserved ? (
                     <button
                       type="button"
