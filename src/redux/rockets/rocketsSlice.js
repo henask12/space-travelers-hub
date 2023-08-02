@@ -12,6 +12,13 @@ const initialState = {
   rockets: [],
 };
 
+// const RESERVE_ROCKET = 'rockets/reserveRocket';
+
+// export const reserveRocket = (rocketId) => ({
+//   type: RESERVE_ROCKET,
+//   payload: rocketId,
+// });
+
 export const fetchRockets = createAsyncThunk('rockets/fetchRockets', async () => {
   try {
     const response = await axios.get(BASE_URL);
@@ -32,6 +39,16 @@ const rocketsSlice = createSlice({
       state.success = false;
       state.performingAction = false;
     },
+    reserveRocket(state, action) {
+      const rocketId = action.payload;
+      const existingRocket = state.rockets.find(
+        (rocket) => rocket.id === rocketId,
+      );
+      if (existingRocket) {
+        existingRocket.reserved = true;
+      }
+    },
+
   },
   extraReducers: (builder) => {
     builder.addCase(fetchRockets.pending, (state) => {
@@ -53,5 +70,5 @@ const rocketsSlice = createSlice({
   },
 });
 
-export const { RESET_VALUE } = rocketsSlice.actions;
+export const { RESET_VALUE, reserveRocket } = rocketsSlice.actions;
 export default rocketsSlice.reducer;

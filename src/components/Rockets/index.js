@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchRockets } from '../../redux/rockets/rocketsSlice';
+import { fetchRockets, reserveRocket } from '../../redux/rockets/rocketsSlice';
 
 const RocketsList = () => {
   const dispatch = useDispatch();
@@ -9,6 +9,12 @@ const RocketsList = () => {
   useEffect(() => {
     dispatch(fetchRockets());
   }, [dispatch]);
+
+  const handleReserveRocket = (rocketId) => {
+    console.log('Reserve Rocket clicked for rocket ID:', rocketId);
+    dispatch(reserveRocket(rocketId));
+  };
+  console.log('RocketsList rendered'); // Add this line
 
   return (
 
@@ -38,6 +44,9 @@ const RocketsList = () => {
                   <button
                     type="button"
                     className="mt-4 bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
+                    onClick={() => {
+                      handleReserveRocket(rocket.id);
+                    }}
                   >
                     Reserve Rocket
                   </button>
