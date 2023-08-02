@@ -20,11 +20,15 @@ const Navigation = () => (
 
         {/* Links on the right */}
         <div className="flex space-x-4">
-          <Link exact to="/" className="text-gray-600 hover:text-gray-300">
-            My Profile
+          <Link exact to="/" className="text-gray-600 hover:text-black-900 font-bold">
+            Missions
           </Link>
-          <Link exact to="/rockets" className="text-gray-600 hover:text-gray-300">
+          <Link exact to="/rockets" className="text-gray-600 hover:text-black-900 font-bold">
             Rockets
+          </Link>
+          <span>|</span>
+          <Link exact to="/" className="text-gray-600 hover:text-black-900 font-bold">
+            My Profile
           </Link>
         </div>
       </div>
