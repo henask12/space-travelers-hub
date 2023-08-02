@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchRockets, reserveRocket } from '../../redux/rockets/rocketsSlice';
+import { cancelReservation, fetchRockets, reserveRocket } from '../../redux/rockets/rocketsSlice';
 
 const RocketsList = () => {
   const dispatch = useDispatch();
@@ -11,10 +11,11 @@ const RocketsList = () => {
   }, [dispatch]);
 
   const handleReserveRocket = (rocketId) => {
-    console.log('Reserve Rocket clicked for rocket ID:', rocketId);
     dispatch(reserveRocket(rocketId));
   };
-  console.log('RocketsList rendered'); // Add this line
+  const handleCancelReservation = (rocketId) => {
+    dispatch(cancelReservation(rocketId));
+  };
 
   return (
 
@@ -41,15 +42,27 @@ const RocketsList = () => {
                     {rocket.engines.type}
                   </p>
                   <p className="text-sm mt-2 text-gray-600">{rocket.description}</p>
-                  <button
-                    type="button"
-                    className="mt-4 bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-                    onClick={() => {
-                      handleReserveRocket(rocket.id);
-                    }}
-                  >
-                    Reserve Rocket
-                  </button>
+                  {rocket.reserved ? (
+                    <button
+                      type="button"
+                      className="mt-4 bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded"
+                      onClick={() => {
+                        handleCancelReservation(rocket.id);
+                      }}
+                    >
+                      Cancel Reservation
+                    </button>
+                  ) : (
+                    <button
+                      type="button"
+                      className="mt-4 bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
+                      onClick={() => {
+                        handleReserveRocket(rocket.id);
+                      }}
+                    >
+                      Reserve Rocket
+                    </button>
+                  )}
                 </div>
               </div>
             </div>
