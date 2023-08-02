@@ -29,3 +29,8 @@ code {
     'Courier New',
     monospace;
 }
+
+.rockets__list img {
+  max-width: 300px;
+  height: auto;
+}
