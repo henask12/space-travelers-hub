@@ -5,6 +5,7 @@ import {
 } from 'react-router-dom';
 import RocketsList from '../Rockets';
 import MissionsList from '../Missions/MissionComp';
+import MyProfilePage from '../Views';
 
 const Navigation = () => (
   <Router>
@@ -27,7 +28,7 @@ const Navigation = () => (
             Rockets
           </Link>
           <span>|</span>
-          <Link exact to="/" className="text-gray-600 hover:text-black-900 font-bold">
+          <Link exact to="/profile" className="text-gray-600 hover:text-black-900 font-bold">
             My Profile
           </Link>
         </div>
@@ -37,6 +38,7 @@ const Navigation = () => (
     <Routes>
       <Route exact path="/" element={<MissionsList />} />
       <Route exact path="/rockets" element={<RocketsList />} />
+      <Route exact path="/profile" element={<MyProfilePage />} />
     </Routes>
   </Router>
 );
