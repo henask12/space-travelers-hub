@@ -21,14 +21,14 @@ const Navigation = () => (
 
         {/* Links on the right */}
         <div className="flex space-x-4">
-          <Link exact to="/" className="text-gray-600 hover:text-black-900 font-bold">
-            Missions
-          </Link>
-          <Link exact to="/rockets" className="text-gray-600 hover:text-black-900 font-bold">
+          <Link exact="true" to="/" className="text-gray-600 hover:text-black-900 font-bold">
             Rockets
           </Link>
+          <Link exact="true" to="/missions" className="text-gray-600 hover:text-black-900 font-bold">
+            Missions
+          </Link>
           <span>|</span>
-          <Link exact to="/profile" className="text-gray-600 hover:text-black-900 font-bold">
+          <Link exact="true" to="/profile" className="text-gray-600 hover:text-black-900 font-bold">
             My Profile
           </Link>
         </div>
@@ -36,8 +36,8 @@ const Navigation = () => (
     </nav>
 
     <Routes>
-      <Route exact path="/" element={<MissionsList />} />
-      <Route exact path="/rockets" element={<RocketsList />} />
+      <Route exact path="/" element={<RocketsList />} />
+      <Route exact path="/missions" element={<MissionsList />} />
       <Route exact path="/profile" element={<MyProfilePage />} />
     </Routes>
   </Router>
