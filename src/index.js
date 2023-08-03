@@ -6,8 +6,10 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import store from './redux/store';
 import { fetchRockets } from './redux/rockets/rocketsSlice';
+import { fetchMissions } from './redux/missions/missionsSlice';
 
 store.dispatch(fetchRockets());
+store.dispatch(fetchMissions());
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

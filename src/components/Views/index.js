@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 
 const MyProfilePage = () => {
   const rockets = useSelector((state) => state.rockets);
+  const missions = useSelector((state) => state.missions);
 
   function rocketsList() {
     const reservedRockets = rockets.rockets.filter((rocket) => rocket.reserved === true);
@@ -26,19 +27,41 @@ const MyProfilePage = () => {
     );
   }
 
+  function missionsList() {
+    const bookMissions = missions.missions.filter((mission) => mission.member === true);
+
+    if (bookMissions.length) {
+      return bookMissions.map((mission, index) => (
+        <tr key={mission.mission_id} className={index % 2 === 0 ? 'bg-white' : 'bg-gray-200'}>
+          <td className={`px-4 py-2 ${index % 2 === 0 ? 'font-semibold' : ''}`}>
+            {mission.mission_name}
+          </td>
+        </tr>
+      ));
+    }
+
+    return (
+      <tr>
+        <td className="px-4 py-2 text-center">
+          <i>No booked mission yet</i>
+        </td>
+      </tr>
+    );
+  }
+
   return (
     <section className="p-4 m-8">
       <div className="flex">
         <div className="w-1/2 pr-4">
           <div className="bg-white border border-gray-380 rounded-lg shadow-lg p-4 hover:bg-gray-200">
-            <h1 className="text-2xl font-semibold mb-4">My Rockets</h1>
+            <h1 className="text-2xl font-semibold mb-4">My Missions</h1>
             <table className="w-full border">
               <thead>
                 <tr className="bg-gray-100">
-                  <th className="px-4 py-2">Rocket Name</th>
+                  <th className="px-4 py-2">Mission Name</th>
                 </tr>
               </thead>
-              <tbody>{rocketsList()}</tbody>
+              <tbody>{missionsList()}</tbody>
             </table>
           </div>
         </div>
