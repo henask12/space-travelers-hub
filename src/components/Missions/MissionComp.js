@@ -71,12 +71,21 @@ const MissionsList = () => {
                           </div>
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap">
-                          <span
-                            className="px-2 inline-flex text-xs leading-5
-            font-semibold rounded-full bg-yellow-100 text-white-800"
-                          >
-                            NOT A MEMBER
-                          </span>
+                          { mission.member ? (
+                            <span
+                              className="px-2 inline-flex text-xs leading-5
+            font-semibold rounded-full bg-green-300 text-white-800"
+                            >
+                              ACTIVE MEMBER
+                            </span>
+                          ) : (
+                            <span
+                              className="px-2 inline-flex text-xs leading-5
+            font-semibold rounded-full bg-gray-400 text-white-800"
+                            >
+                              NOT A MEMBER
+                            </span>
+                          ) }
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                           {mission.member ? (
