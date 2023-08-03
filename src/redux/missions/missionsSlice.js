@@ -32,6 +32,28 @@ const missionsSlice = createSlice({
       state.success = false;
       state.performingAction = false;
     },
+    bookMission(
+      state, action,
+    ) {
+      const missionId = action.payload;
+      const currentMission = state.missions.find(
+        (getMission) => getMission.mission_id === missionId,
+      );
+      if (currentMission) {
+        currentMission.member = true;
+      }
+    },
+    cancelMission(
+      state, action,
+    ) {
+      const missionId = action.payload;
+      const currentMission = state.missions.find(
+        (getMission) => getMission.mission_id === missionId,
+      );
+      if (currentMission) {
+        currentMission.member = false;
+      }
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(fetchMissions.pending, (state) => {
@@ -53,5 +75,5 @@ const missionsSlice = createSlice({
   },
 });
 
-export const { RESET_VALUE } = missionsSlice.actions;
+export const { RESET_VALUE, bookMission, cancelMission } = missionsSlice.actions;
 export default missionsSlice.reducer;
