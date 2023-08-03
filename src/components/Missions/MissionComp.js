@@ -51,7 +51,7 @@ const MissionsList = () => {
                     </tr>
                   </thead>
                   <tbody className="bg-white divide-y divide-gray-200">
-                    {missions.map((mission, index) => (
+                    {missions?.map((mission, index) => (
                       <tr
                         key={mission.mission_id}
                         className={index % 2 === 0 ? 'bg-gray-200' : 'bg-white'}
