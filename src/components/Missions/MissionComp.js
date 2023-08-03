@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchMissions } from '../../redux/missions/missionsSlice';
+import { bookMission, cancelMission, fetchMissions } from '../../redux/missions/missionsSlice';
 
 const MissionsList = () => {
   const dispatch = useDispatch();
@@ -9,6 +9,13 @@ const MissionsList = () => {
   useEffect(() => {
     dispatch(fetchMissions());
   }, [dispatch]);
+
+  const handleJoin = (missionId) => {
+    dispatch(bookMission(missionId));
+  };
+  const handleCancel = (missionId) => {
+    dispatch(cancelMission(missionId));
+  };
 
   return (
     <div className="bg-white border border-gray-400 rounded-lg shadow-sm">
@@ -72,7 +79,29 @@ const MissionsList = () => {
                           </span>
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                          {mission.name}
+                          {mission.member ? (
+                            <button
+                              type="button"
+                              className="mt-4 bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded mr-4"
+                              onClick={() => {
+                                handleCancel(mission.mission_id);
+                              }}
+                            >
+                              Cancel Mission
+                            </button>
+                          )
+                            : (
+                              <button
+                                type="button"
+                                className="mt-4 bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded mr-4"
+                                onClick={() => {
+                                  handleJoin(mission.mission_id);
+                                }}
+                              >
+                                Join Mission
+                              </button>
+                            )}
+
                         </td>
                       </tr>
                     ))}
