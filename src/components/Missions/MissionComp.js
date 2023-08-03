@@ -1,14 +1,10 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { bookMission, cancelMission, fetchMissions } from '../../redux/missions/missionsSlice';
+import { bookMission, cancelMission } from '../../redux/missions/missionsSlice';
 
 const MissionsList = () => {
   const dispatch = useDispatch();
   const missions = useSelector((state) => state.missions.missions);
-
-  useEffect(() => {
-    dispatch(fetchMissions());
-  }, [dispatch]);
 
   const handleJoin = (missionId) => {
     dispatch(bookMission(missionId));
