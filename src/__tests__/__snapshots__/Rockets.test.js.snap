@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the Empty Rockets component correctly 1`] = `
+<div>
+  <div
+    class="bg-white border border-gray-400 rounded-lg shadow-sm"
+  >
+    <div
+      class="p-8"
+    >
+      <div
+        class="bg-white border border-white-300 rounded-lg shadow-sm ml-8 mr-8"
+      />
+      <h2
+        class="text-2xl font-semibold mb-4"
+      >
+        Rockets List
+      </h2>
+      <p>
+        Loading...
+      </p>
+      <div
+        class="grid gap-4 grid-cols-1"
+      />
+    </div>
+  </div>
+</div>
+`;
