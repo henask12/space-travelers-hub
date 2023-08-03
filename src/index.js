@@ -5,6 +5,9 @@ import { Provider } from 'react-redux';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import store from './redux/store';
+import { fetchRockets } from './redux/rockets/rocketsSlice';
+
+store.dispatch(fetchRockets());
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
