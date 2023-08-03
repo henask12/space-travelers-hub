@@ -89,8 +89,7 @@ A **Space Travelers Hub** is a web application that serves as a centralized plat
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
- <!-- [Live Demo](https://henask12.github.io/Leaderboard/dist/index.html) -->
- - No live demo yet
+ [Live Demo](https://space-traveler-hub-qacv.onrender.com/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -119,8 +118,6 @@ Example command:
 <!-- ```sh
  gem install rails
 ``` -->
-
--->
 
 ### Setup
 
