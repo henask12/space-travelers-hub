@@ -36,14 +36,14 @@ exports[`renders the App component correctly 1`] = `
             exact="true"
             href="/"
           >
-            Missions
+            Rockets
           </a>
           <a
             class="text-gray-600 hover:text-black-900 font-bold"
             exact="true"
-            href="/rockets"
+            href="/missions"
           >
-            Rockets
+            Missions
           </a>
           <span>
             |
@@ -67,59 +67,17 @@ exports[`renders the App component correctly 1`] = `
         <div
           class="bg-white border border-white-300 rounded-lg shadow-sm ml-8 mr-8"
         />
-        <div
-          class="flex flex-col"
+        <h2
+          class="text-2xl font-semibold mb-4"
         >
-          <div
-            class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8"
-          >
-            <div
-              class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8"
-            >
-              <div
-                class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg"
-              >
-                <table
-                  class="m-6 min-w-full divide-y divide-gray-200"
-                >
-                  <thead
-                    class="bg-gray-50"
-                  >
-                    <tr>
-                      <th
-                        class="px-6 py-3 text-left text-xs font-bold text-black-500 uppercase tracking-wider"
-                        scope="col"
-                      >
-                        Name
-                      </th>
-                      <th
-                        class="px-6 py-3 text-left text-xs font-bold text-black-500 uppercase tracking-wider"
-                        scope="col"
-                      >
-                        Title
-                      </th>
-                      <th
-                        class="px-6 py-3 text-left text-xs font-bold text-black-500 uppercase tracking-wider"
-                        scope="col"
-                      >
-                        Status
-                      </th>
-                      <th
-                        class="px-6 py-3 text-left text-xs font-bold text-black-500 uppercase tracking-wider"
-                        scope="col"
-                      >
-                        Join
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody
-                    class="bg-white divide-y divide-gray-200"
-                  />
-                </table>
-              </div>
-            </div>
-          </div>
-        </div>
+          Rockets List
+        </h2>
+        <p>
+          Loading...
+        </p>
+        <div
+          class="grid gap-4 grid-cols-1"
+        />
       </div>
     </div>
   </div>
