@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the App component correctly 1`] = `
+<div>
+  <div>
+    <nav
+      class="bg-white-800 py-4 border border-white-100 rounded-lg shadow-sm"
+    >
+      <div
+        class="container mx-auto px-4 sm:px-8 md:px-16 lg:px-20 xl:px-24 2xl:px-32 flex justify-between items-center"
+      >
+        <a
+          class="active flex items-center text-gray-600"
+          href="#/"
+        >
+          <div
+            class="nav__logo flex items-center mr-2"
+          >
+            <img
+              alt="Space Travelers Logo"
+              class="h-8 w-8"
+              src="logo192.png"
+            />
+            <h1
+              class="ml-2 font-bold text-lg"
+            >
+              Space Travelers Hub
+            </h1>
+          </div>
+        </a>
+        <div
+          class="flex space-x-4"
+        >
+          <a
+            class="text-gray-600 hover:text-black-900 font-bold"
+            exact="true"
+            href="/"
+          >
+            Rockets
+          </a>
+          <a
+            class="text-gray-600 hover:text-black-900 font-bold"
+            exact="true"
+            href="/missions"
+          >
+            Missions
+          </a>
+          <span>
+            |
+          </span>
+          <a
+            class="text-gray-600 hover:text-black-900 font-bold"
+            exact="true"
+            href="/profile"
+          >
+            My Profile
+          </a>
+        </div>
+      </div>
+    </nav>
+    <div
+      class="bg-white border border-gray-400 rounded-lg shadow-sm"
+    >
+      <div
+        class="p-8"
+      >
+        <div
+          class="bg-white border border-white-300 rounded-lg shadow-sm ml-8 mr-8"
+        />
+        <h2
+          class="text-2xl font-semibold mb-4"
+        >
+          Rockets List
+        </h2>
+        <p>
+          Loading...
+        </p>
+        <div
+          class="grid gap-4 grid-cols-1"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
